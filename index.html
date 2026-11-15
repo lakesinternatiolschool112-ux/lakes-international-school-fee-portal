@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakes International School</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:#f5f8fc;color:#172c43}
+header{background:white;padding:17px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 15px #0001;position:sticky;top:0;z-index:10}
+.logo{font-size:25px;font-weight:800;color:#063b65}
+.logo span{color:#d3a64a}
+nav a{text-decoration:none;margin-left:20px;color:#26394c;font-weight:500}
+nav a:hover{color:#d3a64a}
+.hero{min-height:560px;background:linear-gradient(90deg,#032b49d9,#032b4940),url('school-photo.png') center/cover;display:flex;align-items:center;padding:8%;color:white}
+.hero-content{max-width:650px}
+.hero h1{font-size:clamp(35px,5vw,55px);line-height:1.2;margin-bottom:20px}
+.hero h1 span{color:#e5bd6c}
+.hero p{line-height:1.9;margin-bottom:30px}
+.btn{display:inline-block;background:#d3a64a;color:#102c43;padding:13px 24px;border:0;border-radius:5px;font-weight:700;text-decoration:none;cursor:pointer}
+.btn:hover{background:#f0c96e}
+section{padding:65px 8%}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:32px;color:#063b65}
+.section-title p{color:#777;margin-top:8px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about h2{font-size:32px;color:#063b65;margin-bottom:15px}
+.about p{line-height:2;color:#666}
+.about img{width:100%;border-radius:12px}
+.campus{background:#eaf1f7}
+.campus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.campus-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #0001}
+.campus-card img{width:100%;height:200px;object-fit:cover}
+.campus-card h3{padding:16px;color:#063b65}
+.fees{background:#073653;color:white}
+.fee-box,.result,.payment,.slip{background:white;color:#172c43;max-width:650px;margin:20px auto;padding:28px;border-radius:12px;box-shadow:0 8px 25px #0002}
+.fee-box h2,.payment h2,.result h2{color:#063b65;text-align:center;margin-bottom:12px}
+input,select{width:100%;padding:13px;margin:9px 0;border:1px solid #ddd;border-radius:5px;font-size:14px}
+input:focus,select:focus{outline:1px solid #d3a64a}
+.fee-box button,.payment button{width:100%;margin-top:10px}
+.result,.payment,.slip{display:none}
+.student-detail{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #eee;padding:12px 0;font-size:14px}
+.student-detail strong{text-align:right}
+.amount{background:#edf4f8;border-radius:8px;padding:18px;text-align:center;margin:15px 0}
+.amount h2{color:#08734d;font-size:28px}
+.month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.month-option{border:1px solid #ddd;border-radius:7px;padding:10px;font-size:13px}
+.month-option input{width:auto;margin:0 5px 0 0}
+.qr-area{text-align:center;margin:20px auto}
+.qr-area img{width:min(100%,360px);height:auto;display:block;margin:auto}
+.notice{font-size:12px;color:#777;text-align:center;margin:12px 0}
+.status{padding:12px;background:#fff4d9;color:#795400;border-radius:7px;text-align:center;margin:15px 0}
+.slip{border:2px dashed #063b65}
+.slip h2{text-align:center;color:#063b65;margin-bottom:15px}
+.slip p{margin:8px 0;font-size:14px}
+footer{background:#031f35;color:white;text-align:center;padding:30px}
+footer h2{color:#e5bd6c}
+footer p{margin-top:10px;color:#bbb;font-size:13px}
+@media(max-width:750px){
+ header{flex-direction:column;gap:12px}
+ nav a{margin:0 7px;font-size:12px}
+ .about{grid-template-columns:1fr}
+ .campus-grid{grid-template-columns:1fr}
+ section{padding:45px 5%}
+ .month-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media print{
+ body *{visibility:hidden}
+ #slip,#slip *{visibility:visible}
+ #slip{display:block;position:absolute;left:0;top:0;width:100%;box-shadow:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">LAKES<span>.</span></div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#campus">Campus</a>
+  <a href="#fees">Submit Fees</a>
+ </nav>
+</header>
+
+<div class="hero" id="home">
+ <div class="hero-content">
+  <h1>Welcome to<br><span>Lakes International School</span></h1>
+  <p>Empowering young minds through knowledge, discipline, creativity and excellence.</p>
+  <a href="#fees" class="btn">SUBMIT SCHOOL FEES →</a>
+ </div>
+</div>
+
+<section class="about" id="about">
+ <div>
+  <h2>About Our School</h2>
+  <p>Lakes International School is committed to quality education and creating an environment where students can discover their potential. We believe in academic excellence, discipline, creativity and overall personality development.</p>
+ </div>
+ <img src="school-photo.png" alt="Lakes International School campus">
+</section>
+
+<section class="campus" id="campus">
+ <div class="section-title">
+  <h2>Our Campus</h2>
+  <p>Learning, growing and achieving together.</p>
+ </div>
+ <div class="campus-grid">
+  <div class="campus-card">
+   <img src="school-photo.png" alt="School campus">
+   <h3>Our School Campus</h3>
+  </div>
+  <div class="campus-card">
+   <img src="school-photo.png" alt="School surroundings">
+   <h3>Beautiful Environment</h3>
+  </div>
+  <div class="campus-card">
+   <img src="school-photo.png" alt="School building">
+   <h3>Learning Environment</h3>
+  </div>
+ </div>
+</section>
+
+<section class="fees" id="fees">
+ <div class="section-title">
+  <h2 style="color:white">Online Fee Submission</h2>
+  <p style="color:#ddd">Enter your demo admission number to view fee details.</p>
+ </div>
+
+ <div class="fee-box">
+  <h2>Student Login</h2>
+  <p style="text-align:center;color:#777;font-size:13px">Use one of the sample admission numbers in the project.</p>
+  <input id="admission" placeholder="Enter Admission Number">
+  <button class="btn" onclick="findStudent()">SEARCH STUDENT →</button>
+  <p id="error" style="color:red;margin-top:12px"></p>
+ </div>
+
+ <div class="result" id="result">
+  <h2>Student Details</h2>
+  <div id="studentDetails"></div>
+  <div class="amount">
+   <p>Monthly Fee (Demo)</p>
+   <h2 id="studentFee"></h2>
+  </div>
+
+  <h3 style="color:#063b65;margin-top:20px">Select Fee Months</h3>
+  <p style="font-size:12px;color:#777">Select one or more pending months. This demo starts with all months unpaid.</p>
+  <div class="month-grid" id="monthGrid"></div>
+
+  <label style="display:block;margin:12px 0">
+   <input type="checkbox" id="yearly" style="width:auto" onchange="calculateTotal()">
+   Select full year (10% demo discount)
+  </label>
+
+  <div class="amount">
+   <p>Selected Fee Amount</p>
+   <h2 id="calculatedAmount">₹0</h2>
+   <p id="discountText" style="font-size:12px;color:#08734d"></p>
+  </div>
+  <button class="btn" style="width:100%" onclick="showPayment()">CONTINUE TO PAYMENT →</button>
+ </div>
+
+ <div class="payment" id="payment">
+  <h2>Fee Payment</h2>
+  <p class="notice">Demo payment interface. Please verify the recipient details in your UPI app before making any payment.</p>
+
+  <div class="amount">
+   <p>Amount Payable</p>
+   <h2 id="finalAmount">₹0</h2>
+  </div>
+
+  <p style="text-align:center;color:#555;font-size:13px">Scan this QR code to pay</p>
+  <div class="qr-area">
+   <img src="qr-code.jpeg" alt="Navi UPI QR code">
+  </div>
+
+  <p class="notice">Check the recipient name and amount in your UPI app before authorising payment.</p>
+
+  <label>Upload payment screenshot</label>
+  <input type="file" id="paymentImage" accept="image/*" onchange="previewImage()">
+  <img id="imagePreview" style="display:none;max-width:100%;max-height:250px;margin:12px auto;border-radius:8px" alt="Payment screenshot preview">
+
+  <label>Transaction reference (optional)</label>
+  <input id="reference" placeholder="Enter transaction reference">
+
+  <button class="btn" onclick="submitPayment()">SUBMIT FOR ADMIN REVIEW</button>
+  <p id="paymentMessage" class="notice"></p>
+ </div>
+
+ <div class="slip" id="slip">
+  <h2>Fee Submission Slip</h2>
+  <p><strong>School:</strong> Lakes International School</p>
+  <p><strong>Submission ID:</strong> <span id="slipId"></span></p>
+  <p><strong>Student:</strong> <span id="slipStudent"></span></p>
+  <p><strong>Admission No.:</strong> <span id="slipAdmission"></span></p>
+  <p><strong>Months:</strong> <span id="slipMonths"></span></p>
+  <p><strong>Amount:</strong> <span id="slipAmount"></span></p>
+  <p><strong>Transaction Reference:</strong> <span id="slipReference"></span></p>
+  <p><strong>Status:</strong> <span id="slipStatus">Pending Admin Review</span></p>
+  <div class="status">SUBMITTED — PAYMENT NOT YET VERIFIED</div>
+  <p class="notice">This is a demo submission acknowledgement, not an official fee receipt or proof of payment.</p>
+  <button class="btn" onclick="window.print()">PRINT SLIP</button>
+ </div>
+</section>
+
+<footer>
+ <h2>LAKES INTERNATIONAL SCHOOL</h2>
+ <p>Bhimtal, Nainital, Uttarakhand</p>
+ <p>© 2026 Lakes International School. Demo project.</p>
+</footer>
+
+<script>
+const months = [
+ "April","May","June","July","August","September",
+ "October","November","December","January","February","March"
+];
+
+// FICTIONAL DEMO RECORDS — NOT REAL SCHOOL STUDENT DATA
+const students = [
+ {admission:"LIS2025001",name:"Aarav Sharma",className:"VI",section:"A",parent:"Rohan Sharma",fee:4500},
+ {admission:"LIS2025002",name:"Ananya Verma",className:"VII",section:"B",parent:"Suresh Verma",fee:4800},
+ {admission:"LIS2025003",name:"Vivaan Joshi",className:"VIII",section:"A",parent:"Manish Joshi",fee:5200},
+ {admission:"LIS2025004",name:"Diya Singh",className:"V",section:"C",parent:"Amit Singh",fee:4200},
+ {admission:"LIS2025005",name:"Advik Mehta",className:"IX",section:"A",parent:"Kunal Mehta",fee:5600},
+ {admission:"LIS2025006",name:"Myra Kapoor",className:"IV",section:"B",parent:"Nitin Kapoor",fee:3900},
+ {admission:"LIS2025007",name:"Ishaan Gupta",className:"X",section:"A",parent:"Rahul Gupta",fee:6000},
+ {admission:"LIS2025008",name:"Sara Khan",className:"VI",section:"B",parent:"Imran Khan",fee:4500},
+ {admission:"LIS2025009",name:"Reyansh Das",className:"VIII",section:"C",parent:"Arun Das",fee:5200},
+ {admission:"LIS2025010",name:"Aadhya Patel",className:"VII",section:"A",parent:"Jay Patel",fee:4800},
+ {admission:"LIS2025011",name:"Kabir Rawat",className:"XI",section:"A",parent:"Deepak Rawat",fee:6500},
+ {admission:"LIS2025012",name:"Meera Thapa",className:"V",section:"A",parent:"Sanjay Thapa",fee:4200},
+ {admission:"LIS2025013",name:"Arjun Sharma",className:"IX",section:"B",parent:"Vikas Sharma",fee:5600},
+ {admission:"LIS2025014",name:"Ira Joshi",className:"IV",section:"A",parent:"Naveen Joshi",fee:3900},
+ {admission:"LIS2025015",name:"Dev Malhotra",className:"X",section:"B",parent:"Amit Malhotra",fee:6000},
+ {admission:"LIS2025016",name:"Anaya Rawat",className:"VI",section:"C",parent:"Sanjay Rawat",fee:4500},
+ {admission:"LIS2025017",name:"Rudra Bisht",className:"VIII",section:"B",parent:"Mohan Bisht",fee:5200},
+ {admission:"LIS2025018",name:"Tara Mehta",className:"VII",section:"C",parent:"Karan Mehta",fee:4800},
+ {admission:"LIS2025019",name:"Yash Kapoor",className:"XI",section:"B",parent:"Nitin Kapoor",fee:6500},
+ {admission:"LIS2025020",name:"Kiara Singh",className:"V",section:"B",parent:"Amit Singh",fee:4200}
+];
+
+let selectedStudent = null;
+let selectedMonths = [];
+
+function money(value){
+ return "₹" + value.toLocaleString("en-IN");
+}
+
+function findStudent(){
+ const number = document.getElementById("admission").value.trim().toUpperCase();
+ selectedStudent = students.find(s => s.admission === number);
+
+ document.getElementById("payment").style.display = "none";
+ document.getElementById("slip").style.display = "none";
+
+ if(!selectedStudent){
+  document.getElementById("result").style.display = "none";
+  document.getElementById("error").innerText = "Student not found. Check the admission number.";
+  return;
+ }
+
+ document.getElementById("error").innerText = "";
+ document.getElementById("studentDetails").innerHTML = `
+  <div class="student-detail"><span>Student Name</span><strong>${selectedStudent.name}</strong></div>
+  <div class="student-detail"><span>Admission Number</span><strong>${selectedStudent.admission}</strong></div>
+  <div class="student-detail"><span>Class</span><strong>${selectedStudent.className}</strong></div>
+  <div class="student-detail"><span>Section</span><strong>${selectedStudent.section}</strong></div>
+  <div class="student-detail"><span>Parent Name</span><strong>${selectedStudent.parent}</strong></div>
+ `;
+
+ document.getElementById("studentFee").innerText = money(selectedStudent.fee);
+ selectedMonths = [];
+ document.getElementById("yearly").checked = false;
+
+ document.getElementById("monthGrid").innerHTML = months.map((month,index)=>`
+  <label class="month-option">
+   <input type="checkbox" value="${index}" onchange="monthChanged(this)">
+   ${month}
+  </label>
+ `).join("");
+
+ calculateTotal();
+ document.getElementById("result").style.display = "block";
+ document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+
+function monthChanged(box){
+ const index = Number(box.value);
+ if(box.checked){
+  if(!selectedMonths.includes(index)) selectedMonths.push(index);
+ }else{
+  selectedMonths = selectedMonths.filter(m=>m!==index);
+ }
+ document.getElementById("yearly").checked = false;
+ calculateTotal();
+}
+
+function calculateTotal(){
+ if(!selectedStudent) return;
+
+ const yearly = document.getElementById("yearly").checked;
+ if(yearly){
+  selectedMonths = months.map((_,i)=>i);
+  document.querySelectorAll("#monthGrid input").forEach(box=>box.checked=true);
+ }else{
+  document.querySelectorAll("#monthGrid input").forEach(box=>{
+   box.checked = selectedMonths.includes(Number(box.value));
+  });
+ }
+
+ let total = selectedMonths.length * selectedStudent.fee;
+ let discount = 0;
+
+ if(yearly && selectedMonths.length===12){
+  discount = total * 0.10;
+  total -= discount;
+ }
+
+ document.getElementById("calculatedAmount").innerText = money(total);
+ document.getElementById("discountText").innerText =
+  discount ? "10% yearly discount applied: " + money(discount) : "";
+}
+
+function showPayment(){
+ if(!selectedStudent || selectedMonths.length===0){
+  alert("Please select at least one pending month.");
+  return;
+ }
+ document.getElementById("finalAmount").innerText =
+  document.getElementById("calculatedAmount").innerText;
+ document.getElementById("payment").style.display = "block";
+ document.getElementById("paymentMessage").innerText = "";
+ document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+}
+
+function previewImage(){
+ const file = document.getElementById("paymentImage").files[0];
+ const preview = document.getElementById("imagePreview");
+ if(!file){
+  preview.style.display="none";
+  return;
+ }
+ if(!file.type.startsWith("image/")){
+  alert("Please select an image file.");
+  return;
+ }
+ preview.src = URL.createObjectURL(file);
+ preview.style.display = "block";
+}
+
+function submitPayment(){
+ const file = document.getElementById("paymentImage").files[0];
+ if(!file){
+  alert("Please upload your payment screenshot first.");
+  return;
+ }
+
+ const reference = document.getElementById("reference").value.trim();
+ const totalText = document.getElementById("calculatedAmount").innerText;
+ const monthNames = selectedMonths.sort((a,b)=>a-b).map(i=>months[i]).join(", ");
+ const submissionId = "LIS-" + Date.now().toString().slice(-8);
+
+ document.getElementById("slipId").innerText = submissionId;
+ document.getElementById("slipStudent").innerText = selectedStudent.name;
+ document.getElementById("slipAdmission").innerText = selectedStudent.admission;
+ document.getElementById("slipMonths").innerText = monthNames;
+ document.getElementById("slipAmount").innerText = totalText;
+ document.getElementById("slipReference").innerText = reference || "Not provided";
+ document.getElementById("slipStatus").innerText = "Pending Admin Review";
+
+ document.getElementById("paymentMessage").innerText =
+  "Submission created. It is pending manual admin review. Payment has not been verified.";
+
+ document.getElementById("slip").style.display = "block";
+ document.getElementById("slip").scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
